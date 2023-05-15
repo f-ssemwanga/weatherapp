@@ -13,12 +13,22 @@ async function checkWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`); //fecting api url + apiKey
     const data = await response.json(); 
 
-    console.log(data); 
+    //incorrect city name 
+    if(response.status==404){
+        document.querySelector(".error").style.display = "block"; //display error msg
+        document.querySelector(".weather").style.display = "none"; //hides weather div
+    } else {
+        console.log(data)
+        
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + "km/hr";
 
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + "km/hr";
+        //view appears onclick search
+        document.querySelector(".weather").style.display = "block"; //displays weather
+        document.querySelector(".error").style.display = "none"; //hides error msg
+    }
 }
 
 //calling function

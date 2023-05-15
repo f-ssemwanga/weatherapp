@@ -1,4 +1,4 @@
-/* resets all elements
+resets all elements
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,8 +9,17 @@
   }
   body
   {
-    min-height: 100svh; /*scalable viewport height
+    min-height: 100svh; /*scalable viewport height */
     max-width: 100svw;
      background-color: white; 
   } 
-*/
+
+  /* clean view */
+.weather{
+  display: none; 
+}
+
+.error {
+  display: none;
+
+}
