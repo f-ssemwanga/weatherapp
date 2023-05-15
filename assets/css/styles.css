@@ -1,0 +1,16 @@
+/* resets all elements
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: none;
+  }
+  body
+  {
+    min-height: 100svh; /*scalable viewport height
+    max-width: 100svw;
+     background-color: white; 
+  } 
+*/
