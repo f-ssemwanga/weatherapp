@@ -19,14 +19,10 @@ resets all elements
   } 
 
   /* clean view */
-#weatherData{
+#weatherData, .error{
   display: none; 
 }
 
-.error {
-  display: none;
-
-}
 #searchInput{
   padding: 0.5em;
   font-size: 1rem;
@@ -49,30 +45,37 @@ resets all elements
   display:grid;
   height:50vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows:1fr 0.3fr 2fr;
+  grid-template-rows:1fr 0.3fr 1fr 1fr;
   grid-template-areas:
   "label searchInput searchInput"
   "navButtons navButtons navButtons" 
   "error error error "
-  "weatherData weatherData weatherData";
+  "weatherData weatherData weatherData"
+  "weekly weekly weekly";
   grid-gap:10px;
 
 }
+#container {
+  margin: 0 auto;
+  max-width: 100%;
+}
 #search.searchLabel{grid-area:label;}
+#weekly{grid-area:weekly;background-color: aquamarine;}
 #searchInput{grid-area:searchInput;}
-#navButtons{grid-area:navButtons;align-items: center;}
+#navButtons{grid-area:navButtons;}
 #weatherData{grid-area:weatherData;} 
 .error{grid-area:error;} 
 @media only screen and (max-width: 720px){
   #container{
       grid-template-columns: 1fr;
-      grid-template-rows: 0.4fr 0.4fr 0.4fr 1fr;
+      grid-template-rows: 0.4fr 0.4fr 0.4fr 1fr 1fr;
       grid-template-areas:
       "label"
       "searchInput"
       "navButtons"
       "error"
-      "weatherData";
+      "weatherData"
+      "weekly";
      
   }
 }
