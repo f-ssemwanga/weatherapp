@@ -33,7 +33,7 @@ resets all elements
   text-align: center;
   font-weight: bold;
 }
-#searchBtn{
+.btn{
   padding: 0.5em;
   font-size: 1rem;
   font-weight: 800;
@@ -44,20 +44,32 @@ resets all elements
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
-#searchBtn:hover { background-color: #0062cc;  }
+.btn:hover { background-color: #0062cc;  }
 #container{
   display:grid;
   height:50vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:1fr 0.3fr 2fr;
   grid-template-areas:
-  "label searchInput searchInput searchInput"
-  "searchBtn spacer spacer spacer" 
-  "weatherData weatherData weatherData weatherData";
+  "label searchInput searchInput"
+  "navButtons navButtons navButtons" 
+  "weatherData weatherData weatherData";
   grid-gap:10px;
 
 }
-.searchLabel{grid-area:label;}
+#search.searchLabel{grid-area:label;}
 #searchInput{grid-area:searchInput;}
-button{grid-area:searchBtn;}
+#navButtons{grid-area:navButtons;align-items: center;}
 #weatherData{grid-area:weatherData;} 
+@media only screen and (max-width: 720px){
+  #container{
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr 0.4fr 1fr;
+      grid-template-areas:
+      "label"
+      "searchInput"
+      "navButtons"
+      "weatherData";
+     
+  }
+}
