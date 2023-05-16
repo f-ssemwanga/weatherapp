@@ -4,8 +4,8 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 
 
 //user input are captured in this search box
-const searchInput  = document.querySelector(".search input");
-const searchBtn  = document.querySelector(".search");
+const searchInput  = document.querySelector("#search input");
+const searchBtn  = document.querySelector("#searchBtn");
 
 
 //function to pull data from api and displaying on web ap

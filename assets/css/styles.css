@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&display=swap');
 resets all elements
 * {
     box-sizing: border-box;
@@ -11,7 +12,10 @@ resets all elements
   {
     min-height: 100svh; /*scalable viewport height */
     max-width: 100svw;
-     background-color: white; 
+  background-color: black; 
+  color:azure;
+  font-family: 'Inter', sans-serif;
+  font-size: 2em;
   } 
 
   /* clean view */
@@ -23,3 +27,37 @@ resets all elements
   display: none;
 
 }
+#searchInput{
+  padding: 0.5em;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+#searchBtn{
+  padding: 0.5em;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 4px;
+  border: none;
+  background-color: #033d7b;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+#searchBtn:hover { background-color: #0062cc;  }
+#container{
+  display:grid;
+  height:50vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:1fr 0.3fr 2fr;
+  grid-template-areas:
+  "label searchInput searchInput searchInput"
+  "searchBtn spacer spacer spacer" 
+  "weatherData weatherData weatherData weatherData";
+  grid-gap:10px;
+
+}
+.searchLabel{grid-area:label;}
+#searchInput{grid-area:searchInput;}
+button{grid-area:searchBtn;}
+#weatherData{grid-area:weatherData;} 

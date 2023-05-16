@@ -9,19 +9,20 @@
    </head>
 
 
-   <div class ="container">
-        <div class=" search">
-            <label for ="city"> City:</label>
-            <input type ="text" id ="searchInput" placeholder="enter city name" spellcheck="false"> <br>
-            <button type="button">Search</button>
-        </div>
+   <div id ="container">
+        <div id="search">
+            <label class="searchLabel" for ="city"> City:</label>
+            <input type ="text" id ="searchInput" placeholder="enter city name" spellcheck="false">
+         </div>
+     <button  id="searchBtn" type="button">Search</button>
+       
         <!-- ---- -->
         <div class="error">
             <p>Incorrect city name</p>
         </div>
         <!-- ---- -->
 
-        <div class = "weather">
+        <div id = "weatherData">
             <h1 class= "temp">22°c</h1>
             <h2 class="city">New York</h2>
             <div class="details">
