@@ -12,7 +12,7 @@ resets all elements
   {
     min-height: 100svh; /*scalable viewport height */
     max-width: 100svw;
-  background-color: black; 
+  background-color: pink; 
   color:azure;
   font-family: 'Inter', sans-serif;
   font-size: 2em;
