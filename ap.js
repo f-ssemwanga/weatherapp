@@ -6,6 +6,8 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 //user input are captured in this search box
 const searchInput  = document.querySelector("#search input");
 const searchBtn  = document.querySelector(".current");
+const weatherData = document.querySelector("#weatherData")
+const errorDisplay = document.querySelector(".error")
 
 
 //function to pull data from api and displaying on web ap
@@ -14,9 +16,16 @@ async function checkWeather(city){
     const data = await response.json(); 
 
     //incorrect city name 
+    if (city ===""){
+           weatherData.style.display = "none"
+           errorDisplay.style.display = "block"
+           errorDisplay.textContent = "You must enter a city!"
+           return;
+
+    }
     if(response.status==404){
-        document.querySelector(".error").style.display = "block"; //display error msg
-        document.querySelector(".weather").style.display = "none"; //hides weather div
+        errorDisplay.style.display = "block"; //display error msg
+        errorDisplay.style.display = "none"; //hides weather div
     } else {
         console.log(data)
         
@@ -26,8 +35,8 @@ async function checkWeather(city){
         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + "km/hr";
 
         //view appears onclick search
-        document.querySelector(".weather").style.display = "block"; //displays weather
-        document.querySelector(".error").style.display = "none"; //hides error msg
+        weatherData.style.display = "block"; //displays weather
+        errorDisplay.style.display = "none"; //hides error msg
     }
 }
 
